@@ -1,5 +1,5 @@
 
-[1]]]önce exress ile server.js oluşturdu ve   node server.js   ile çalıştırdı
+[[[1]]]   önce exress ile server.js oluşturdu ve   node server.js   ile çalıştırdı
 
 
  **4000 is the port number where this server will listen for requests.
@@ -20,6 +20,7 @@
  // Pass `sayGoodbye` as a callback
    greet("Serdar", sayGoodbye);
 
+  ARROW FUNCTION
 
    An arrow function is a shorter way to write a function in JavaScript.     => 
          Arrow functions remove the need for function keyword.
@@ -42,7 +43,7 @@
 
 
 
-  ****birinci yerine ikinci tercih edilir callback fonsiyonlarda
+  ****birinci yerine ikinci tercih edilir callback fonsiyonlarda   //A callback function is a function that runs after something else happens.
     numbers.map(square);
     numbers.map(num => num * num);
 
@@ -108,19 +109,21 @@ It can modify the request/response objects, end the request-response cycle, or p
 Example uses: logging requests, authentication, parsing data, etc.
 ****app.use()
 Purpose: Registers middleware that runs for every incoming request to your server.
-Syntax: app.use([path], middlewareFunction)
+Syntax:
+ app.use([path], middlewareFunction)
 If no path is specified (like in your code), it runs for all routes (e.g., /, /users, /api, etc.).
 If a path is specified (e.g., app.use('/api', ...)), it runs only for requests to that path.
 
-The Middleware Function: (req, res, next) => { ... }
+The Middleware Function: (req, res, next) => { ... }  ***it is callback function
 Parameters:
 req (Request Object): Contains data about the incoming HTTP request (URL, headers, query parameters, body, etc.).
 res (Response Object): Used to send responses back to the client.
 next (Function): Passes control to the next middleware in the chain. If you don’t call next(), the request will hang indefinitely.
+***This callback runs when a request arrives, not when the server starts. The server "waits" for the event (HTTP request) to trigger it.
 
 **Middleware and route handlers execute in the order they’re written.
 
-Basic Route Handler
+Basic Route Handler    ***it is callback function  Only when a GET request is made to the root path (/). The callback sits idle until the event (request) occurs.
 app.get('/home', (req, res) => {
     res.send('Welcome to Home Page');
 });
@@ -128,3 +131,6 @@ Breaking it Down:
 app.get('/home', ...) → This listens for GET requests on /home.
 (req, res) => { ... } → This is the route handler function.
 res.send('Welcome to Home Page'); → This sends a response back to the user.
+
+***iki tane callback gördün şimdiye kadar.
+
