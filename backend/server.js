@@ -4,11 +4,16 @@ require('dotenv').config();
 //The variable app typically represents an instance of an Express application. It is usually created using:
 const express = require("express");
 
+const workoutRoutes= require("./routes/workout");
+
 //express app
 const app = express(); //express() initializes an Express application that we can use to define routes, middleware, and handle HTTP requests.
 
 
 //middleware
+
+app.use(express.json())
+
 app.use((req,res,next)=>{
     console.log(req.path,req.method);
     next();
@@ -16,10 +21,13 @@ app.use((req,res,next)=>{
 })
 
 
-//route
-app.get('/', (req,res)=>{
-    res.json({mssg:"welcome to my app "})  //localhost 4000 yaz bu çıkıyor  {mssg:"welcome to my app "}
-})
+app.use('/api/workouts' ,workoutRoutes);
+
+////routes e yolladım
+// //route
+// app.get('/', (req,res)=>{
+//     res.json({mssg:"welcome to my app "})  //localhost 4000 yaz bu çıkıyor  {mssg:"welcome to my app "}
+// })
 
 // A client (e.g., a browser) sends a GET request to the root URL (/).
 // The Express server matches the request to the app.get('/', ...) route handler.

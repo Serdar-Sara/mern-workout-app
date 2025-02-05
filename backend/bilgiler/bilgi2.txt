@@ -1,0 +1,29 @@
+api endpoints
+
+get/workouts
+post/workouts
+get/workouts:id
+delete/workouts:id
+patch/workouts:id
+
+>>>>!!!
+app.use(express.json())
+
+It is a middleware in Express.js that parses incoming JSON data from HTTP requests.
+
+What Does It Do?
+Parses JSON Bodies: When a client sends JSON data in the request body (e.g., in a POST or PUT request),
+this middleware converts the raw JSON string into a JavaScript object.
+Attaches to req.body: The parsed JSON data becomes accessible in your route handlers via req.body.
+
+When to Use It
+Use this middleware when your API expects to receive JSON data in the request body. Common scenarios:
+REST APIs: Handling POST/PUT requests (e.g., submitting forms, updating data).
+Frontend Frameworks: When using React, Angular, or Vue, which often send JSON data to the backend.
+Mobile Apps: Mobile clients (iOS/Android) sending JSON payloads.
+
+Summary
+What: Middleware to parse JSON request bodies.
+When: For APIs expecting JSON data (POST/PUT/PATCH requests).
+Why: To access req.body easily and avoid manual parsing.
+How: Add app.use(express.json()) before your routes.
