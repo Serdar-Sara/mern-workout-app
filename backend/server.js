@@ -4,7 +4,8 @@ require('dotenv').config();
 //The variable app typically represents an instance of an Express application. It is usually created using:
 const express = require("express");
 
-const workoutRoutes= require("./routes/workout");
+const workoutRoutes= require("./routes/workout");      // Import the router
+
 
 //express app
 const app = express(); //express() initializes an Express application that we can use to define routes, middleware, and handle HTTP requests.
