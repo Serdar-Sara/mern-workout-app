@@ -1,1 +1,9 @@
-.env
+#img    yorum satırı gibi de kullanabilirsin
+*.jpeg   
+#tüm .jpaglar oldu   * tüm demek
+
+#tek klasör olunca direk ismini yaz  mesela    server.js
+
+*.env
+
+# Ignore the build directory     build/   ile yazılır
