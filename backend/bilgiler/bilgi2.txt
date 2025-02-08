@@ -27,3 +27,9 @@ What: Middleware to parse JSON request bodies.
 When: For APIs expecting JSON data (POST/PUT/PATCH requests).
 Why: To access req.body easily and avoid manual parsing.
 How: Add app.use(express.json()) before your routes.
+
+*****
+How Node.js Resolves Paths
+If the path starts with ./ → Node.js looks in the same directory.
+If the path starts with ../ → Node.js moves one folder up.  (bir adım geri git öyle bak demek)
+If the path does not start with . or / → Node.js assumes it's a built-in module or looks in node_modules.

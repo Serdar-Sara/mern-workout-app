@@ -1,6 +1,8 @@
 
 
-const express= require("express");
+const express= require('express');
+
+const Workout= require('../models/WorkoutModel')
 
 const router= express.Router();
 
@@ -12,7 +14,7 @@ res.json({mssag: 'get all workouts'})
 })
 
 
-//get one workout         get      localhost:4000/api/workouts/1
+//get one workout         get      localhost:4000/api/workouts/1 
 router.get('/:id', (req,res)=>{
     res.json({mssg:'get one workout'})
 })
@@ -20,6 +22,7 @@ router.get('/:id', (req,res)=>{
 
 //post one workout              post    localhost:4000/api/workouts/
 router.post('/',(req,res)=>{
+    const {title, load, reps}=req.body
  res.json({mssg:'post one workout'})
 } )
 
