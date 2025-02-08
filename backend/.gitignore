@@ -7,3 +7,4 @@
 *.env
 
 # Ignore the build directory     build/   ile yazılır
+node_modules/
