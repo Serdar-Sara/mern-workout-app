@@ -1,6 +1,9 @@
 const express = require("express");
 
-const {}=require('../controllers/workoutController')
+const {
+    createWorkout,
+     
+}=require('../controllers/workoutController')
 
 
 
