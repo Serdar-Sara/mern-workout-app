@@ -46,5 +46,7 @@ const createWorkout= async (req, res)=>{
 
 
 module.export={
+    getWorkouts,
+    getWorkout,
     createWorkout
 }
